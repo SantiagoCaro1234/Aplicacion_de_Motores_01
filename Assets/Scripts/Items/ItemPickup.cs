@@ -31,6 +31,10 @@ public class ItemPickup : MonoBehaviour
         {
             case Items.HealingItem:
                 return new HealingItem();
+            case Items.MoveSpeedItem:
+                return new MoveSpeedItem();
+            case Items.IncreaseJumpItem:
+                return new IncreaseJumpItem();
             default:
                 return new HealingItem(); 
         }
@@ -42,6 +46,7 @@ public class ItemPickup : MonoBehaviour
         {
             Player player = collision.GetComponent<Player>();
             AddItem(player);
+            player.CallItemOnPickup();
             Destroy(this.gameObject);
         }
     }
@@ -50,4 +55,6 @@ public class ItemPickup : MonoBehaviour
 public enum Items
 {
     HealingItem,
+    MoveSpeedItem,
+    IncreaseJumpItem
 }

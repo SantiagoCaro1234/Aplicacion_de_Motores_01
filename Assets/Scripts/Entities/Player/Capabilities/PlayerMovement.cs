@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D characterController;
 
-    [SerializeField] private float movementSpeed = 40f;
+    [SerializeField] public float movementSpeed = 40f;
 
     float horizontalMove = 0f;
 
@@ -26,5 +26,10 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController.Move(horizontalMove * Time.fixedDeltaTime, false, isJumping);
         isJumping = false;
+    }
+
+    public void IncreaseMoveSpeed(float additionalMoveSpeed)
+    {
+        movementSpeed += additionalMoveSpeed;
     }
 }

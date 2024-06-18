@@ -14,6 +14,7 @@ public class AspectRatio : MonoBehaviour
     */
 
     [SerializeField] public float aspect;
+    public AspectRatioValue _AspectRatioName;
 
     private float fourThirdsValue = 1.333333333333333f;
     private float sixteenNinthsValue = 1.777777777777778f;
@@ -29,35 +30,34 @@ public class AspectRatio : MonoBehaviour
 
     void Update()
     {
-        cam.aspect = aspect;
+        SetAspect(_AspectRatioName);  // Update aspect ratio
+        cam.aspect = aspect;  // Update camera aspect ratio
     }
-
-    public AspectRatioValue _AspectRatioName;
 
     public enum AspectRatioValue
     {
         FourThirds,
-        sixteenNinths,
-        sixteenTenths,
-        twentyNinths
+        SixteenNinths,
+        SixteenTenths,
+        TwentyNinths
     }
 
-    //public void SetAspect(Enum ratioValue)
-    //{
-    //    switch (ratioValue)
-    //    {
-    //        case ratioValue.FourThirds:
-    //            aspect = fourThirdsValue;
-    //            break;
-    //        case ratioValue.sixteenNinths:
-    //            aspect = sixteenNinthsValue;
-    //            break;
-    //        case ratioValue.sixteenTenths:
-    //            aspect = sixteenTenthsValue;
-    //            break;
-    //        case ratioValue.twentyNinths:
-    //            aspect = twentyNinthsValue;
-    //            break;
-    //    }
-    //}
+    public void SetAspect(AspectRatioValue ratioValue)
+    {
+        switch (ratioValue)
+        {
+            case AspectRatioValue.FourThirds:
+                aspect = fourThirdsValue;
+                break;
+            case AspectRatioValue.SixteenNinths:
+                aspect = sixteenNinthsValue;
+                break;
+            case AspectRatioValue.SixteenTenths:
+                aspect = sixteenTenthsValue;
+                break;
+            case AspectRatioValue.TwentyNinths:
+                aspect = twentyNinthsValue;
+                break;
+        }
+    }
 }

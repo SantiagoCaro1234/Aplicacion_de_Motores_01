@@ -27,8 +27,16 @@ public class Player : Entity
         {
             i.item.Update(this, i.stacks);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         StartCoroutine(CallItemUpdate());
+    }
+
+    public void CallItemOnPickup()
+    {
+        foreach (ItemList i in itemsList)
+        {
+            i.item.OnPickup(this, i.stacks);
+        }
     }
 
     protected override void Die()
