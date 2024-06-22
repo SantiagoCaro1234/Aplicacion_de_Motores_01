@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CameraFollowing : MonoBehaviour
 {
-    [SerializeField] private float FollowSpeed = 2f;
-    [SerializeField] private float yOffset = 1f;
+    [SerializeField] private float FollowSpeed = 5f;
+    [SerializeField] private float yOffset = 0f;
     public Transform target;
+
+    private void Awake()
+    {
+        target = FindObjectOfType<Player>().transform;
+    }
 
     void Update()
     {

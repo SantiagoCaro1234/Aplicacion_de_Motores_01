@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8760919259785607195}
+  - component: {fileID: 4127162532066233167}
+  - component: {fileID: 5010665121675558923}
   - component: {fileID: 5162704780790844746}
   - component: {fileID: 5849864287443479596}
   - component: {fileID: 8190426020827648114}
-  - component: {fileID: 4127162532066233167}
-  - component: {fileID: 5010665121675558923}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -39,6 +39,34 @@ Transform:
   - {fileID: 6488789972944866416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4127162532066233167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580588443102771527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0bc7966e06f754ca951b475fe051cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 0
+  itemsList: []
+--- !u!114 &5010665121675558923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580588443102771527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9340417eebe095d47b843dbb6ca6e1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 8190426020827648114}
+  movementSpeed: 40
 --- !u!61 &5162704780790844746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,32 +167,6 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4127162532066233167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580588443102771527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0bc7966e06f754ca951b475fe051cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5010665121675558923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580588443102771527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9340417eebe095d47b843dbb6ca6e1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 8190426020827648114}
-  movementSpeed: 40
 --- !u!1 &6654486179829360806
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,11 +16,6 @@ public class Player : Entity
         _currentHealth = 100f;
     }
 
-    private void Update()
-    {
-
-    }
-
     IEnumerator CallItemUpdate()
     {
         foreach (ItemList i in itemsList)
