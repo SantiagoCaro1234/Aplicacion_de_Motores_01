@@ -18,8 +18,8 @@ public class Entity : MonoBehaviour, IDamageable
         }
     }
 
-    protected virtual void Die()
+    public virtual void Die()
     {
-
+        print($"{gameObject.name} has died");
     }
 }

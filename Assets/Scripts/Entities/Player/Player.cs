@@ -34,8 +34,8 @@ public class Player : Entity
         }
     }
 
-    protected override void Die()
+    public override void Die()
     {
-        print("Moriste");
+        base.Die();
     }
 }

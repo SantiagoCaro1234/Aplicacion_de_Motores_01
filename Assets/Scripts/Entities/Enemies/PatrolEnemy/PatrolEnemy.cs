@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PatrolEnemy : Entity
 {
+    #region Patrol Related
     [SerializeField] GameObject _pointA;
     [SerializeField] GameObject _pointB;
     Rigidbody2D _rb;
     Transform _currentPoint;
     [SerializeField] private float _speed;
+    #endregion
 
     private void Start()
     {
@@ -53,5 +55,11 @@ public class PatrolEnemy : Entity
         Gizmos.DrawWireSphere(_pointA.transform.position, 0.5f);
         Gizmos.DrawWireSphere(_pointB.transform.position, 0.5f);
         Gizmos.DrawLine(_pointA.transform.position, _pointB.transform.position);
+    }
+
+    public override void Die()
+    {
+
+        Destroy(this.gameObject);
     }
 }
