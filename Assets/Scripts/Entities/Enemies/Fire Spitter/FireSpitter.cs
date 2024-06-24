@@ -24,7 +24,7 @@ public class FireSpitter : Entity
 
     private void Shoot()
     {
-        Debug.Log("Shot");
+        //Debug.Log("Shot");
         Instantiate(_bulletPrefab, _spawnPoint.position, _spawnPoint.rotation);
     }
 

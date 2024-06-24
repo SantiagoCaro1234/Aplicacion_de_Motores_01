@@ -17,7 +17,7 @@ public class DeathCollider : MonoBehaviour
     {
         if (collision.GetComponent<Rigidbody2D>() != null)
         {           
-            print($"collision with {collision.gameObject.name}");
+            print($"{this.gameObject} collision with {collision.gameObject.name}");
 
             Vector2 knockBackDirection = (collision.transform.position - transform.position).normalized;
 
