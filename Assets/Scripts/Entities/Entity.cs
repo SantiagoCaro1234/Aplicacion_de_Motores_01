@@ -10,7 +10,7 @@ public class Entity : MonoBehaviour, IDamageable
     {
         _currentHealth -= damage;
 
-        print($"{gameObject.name}'s Health: {_currentHealth}");
+        //Debug.Log($"{gameObject.name}'s Health: {_currentHealth}");
 
         if (_currentHealth <= 0)
         {

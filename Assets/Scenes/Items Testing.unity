@@ -1468,22 +1468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4127162532066233167, guid: bbfa60e3ac63e20438da5f8dba83498e, type: 3}
-      propertyPath: itemsList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127162532066233167, guid: bbfa60e3ac63e20438da5f8dba83498e, type: 3}
-      propertyPath: itemsList.Array.data[0].name
-      value: Healing Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127162532066233167, guid: bbfa60e3ac63e20438da5f8dba83498e, type: 3}
-      propertyPath: itemsList.Array.data[0].stacks
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849864287443479596, guid: bbfa60e3ac63e20438da5f8dba83498e, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8760919259785607195, guid: bbfa60e3ac63e20438da5f8dba83498e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.179746
