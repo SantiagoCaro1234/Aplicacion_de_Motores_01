@@ -5,15 +5,27 @@ using UnityEngine;
 public class Player : Entity
 {
     public List<ItemList> itemsList = new List<ItemList>();
+    public delegate void OnPlayerDead();
+    public static OnPlayerDead onPlayerDeath;
+
+
+    private void Awake()
+    {
+        onPlayerDeath = null;
+        _currentHealth = 100f;
+    }
 
     private void Start()
     {
         StartCoroutine(CallItemUpdate());
     }
 
-    private void Awake()
+    private void Update()
     {
-        _currentHealth = 100f;
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            DelegateUtils.ListSubscribedMethods(onPlayerDeath);
+        }
     }
 
     IEnumerator CallItemUpdate()
@@ -36,6 +48,6 @@ public class Player : Entity
 
     public override void Die()
     {
-        base.Die();
+        onPlayerDeath?.Invoke();
     }
 }

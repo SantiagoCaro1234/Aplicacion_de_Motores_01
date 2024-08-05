@@ -5,12 +5,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D characterController;
+    private Rigidbody2D rb;
+    private Player _playerscr;
 
     [SerializeField] public float movementSpeed = 40f;
 
     float horizontalMove = 0f;
 
     bool isJumping = false;
+
+    private void OnEnable()
+    {
+        Player.onPlayerDeath += FreezeMovement;
+    }
+
+    private void OnDisable()
+    {
+        Player.onPlayerDeath -= FreezeMovement;
+    }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        _playerscr = GetComponent<Player>();
+    }
+
+    private void Start()
+    {
+        Player.onPlayerDeath += FreezeMovement;
+    }
 
     private void Update()
     {
@@ -31,5 +54,10 @@ public class PlayerMovement : MonoBehaviour
     public void IncreaseMoveSpeed(float additionalMoveSpeed)
     {
         movementSpeed += additionalMoveSpeed;
+    }
+
+    public void FreezeMovement()
+    {
+        if (rb != null) rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
